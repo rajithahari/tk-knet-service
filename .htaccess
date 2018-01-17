@@ -1,0 +1,2 @@
+Redirect 301 /response /response.php
+Redirect permanent /response.php response
