@@ -10,19 +10,19 @@ if(isset($_POST) && !empty($_POST)){
     $auth = $_POST['auth'];
     $ref = $_POST['ref'];
     $trackid = $_POST['trackid'];
-    $udf1 = $_POST['udf1'];
+    $bookingId = $_POST['udf1'];
 
     $actual_link = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]/";
     if ( $presult == "CAPTURED" )
     {
         $result_url = $actual_link."result";
         
-        $result_params = "?PaymentID=" . $PaymentID . "&Result=" . $presult . "&PostDate=" . $postdate . "&TranID=" . $tranid . "&Auth=" . $auth . "&Ref=" . $ref . "&TrackID=" . $trackid . "&UDF1=" . $udf1   ;            
+        $result_params = "?PaymentID=" . $PaymentID . "&Result=" . $presult . "&PostDate=" . $postdate . "&TranID=" . $tranid . "&Auth=" . $auth . "&Ref=" . $ref . "&TrackID=" . $trackid . "&BookingID=" . $bookingId   ;            
     }
     else
     {
         $result_url = $actual_link."error";
-        $result_params = "?PaymentID=" . $PaymentID . "&Result=" . $presult . "&PostDate=" . $postdate . "&TranID=" . $tranid . "&Auth=" . $auth . "&Ref=" . $ref . "&TrackID=" . $trackid . "&UDF1=" . $udf1;
+        $result_params = "?PaymentID=" . $PaymentID . "&Result=" . $presult . "&PostDate=" . $postdate . "&TranID=" . $tranid . "&Auth=" . $auth . "&Ref=" . $ref . "&TrackID=" . $trackid . "&BookingID=" . $bookingId;
 
     }
     echo "REDIRECT=".$result_url.$result_params;
